@@ -4,6 +4,7 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import Logo from '../assets/icons/logo.svg';
 import DogLogin from '../assets/images/dog-login.png';
 import { styles } from './styles';
+import Button from '@/components/Button';
 
 const Login = () => {
   return (
@@ -26,19 +27,15 @@ const Login = () => {
           Descubra quem está abanando o rabo por aí!
         </Text>
         <View style={styles.buttons}>
-          <TouchableOpacity
-            style={styles.buttonLogin}
-            activeOpacity={0.5}
-          >
-            <Text style={styles.buttonLabel}>Entrar</Text>
-          </TouchableOpacity>
+          <Button
+            label='Entrar'
+            type='full'
+          />
 
-          <TouchableOpacity
-            style={styles.buttonRegister}
-            activeOpacity={0.5}
-          >
-            <Text style={styles.buttonLabel}>Cadastre-se</Text>
-          </TouchableOpacity>
+          <Button
+            label='Cadastre-se'
+            type='outlined'
+          />
         </View>
       </View>
     </View>
