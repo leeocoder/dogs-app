@@ -1,18 +1,20 @@
+import Login from '@/app/Login';
 import {
   Urbanist_400Regular,
   Urbanist_500Medium,
   Urbanist_700Bold,
+  Urbanist_600SemiBold,
   useFonts,
 } from '@expo-google-fonts/urbanist';
 
 import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 
-import Logo from './src/app/assets/icons/logo.svg';
 export default function App() {
   let [fontsLoaded] = useFonts({
     Urbanist_400Regular,
     Urbanist_500Medium,
+    Urbanist_600SemiBold,
     Urbanist_700Bold,
   });
 
@@ -21,15 +23,12 @@ export default function App() {
   }
 
   return (
-    <View>
-      <Logo
-        width={100}
-        height={100}
-      />
+    <View style={{ flex: 1 }}>
       <StatusBar
-        translucent
+        translucent={true}
         style='auto'
       />
+      <Login />
     </View>
   );
 }
