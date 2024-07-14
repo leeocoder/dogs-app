@@ -10,6 +10,9 @@ import {
 import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
 
+import { NavigationContainer } from '@react-navigation/native';
+import Routes from '@/routes';
+
 export default function App() {
   let [fontsLoaded] = useFonts({
     Urbanist_400Regular,
@@ -23,12 +26,14 @@ export default function App() {
   }
 
   return (
-    <View style={{ flex: 1 }}>
-      <StatusBar
-        translucent={true}
-        style='auto'
-      />
-      <Login />
-    </View>
+    <NavigationContainer>
+      <View style={{ flex: 1 }}>
+        <StatusBar
+          translucent={true}
+          style='auto'
+        />
+        <Routes />
+      </View>
+    </NavigationContainer>
   );
 }

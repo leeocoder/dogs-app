@@ -1,12 +1,22 @@
-import React from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import Button from '@/components/Button';
+import { RootStackParamList } from '@/routes';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
+
+import { Image, Text, View } from 'react-native';
 
 import Logo from '../assets/icons/logo.svg';
 import DogLogin from '../assets/images/dog-login.png';
 import { styles } from './styles';
-import Button from '@/components/Button';
+
+type LoginScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'Login'
+>;
 
 const Login = () => {
+  const navigation = useNavigation<LoginScreenNavigationProp>();
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -35,6 +45,7 @@ const Login = () => {
           <Button
             label='Cadastre-se'
             type='outlined'
+            onPress={() => navigation.navigate('SignUp')}
           />
         </View>
       </View>
