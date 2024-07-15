@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    color: theme.colors.primary[900],
+    color: theme.colors.slate[500],
     fontFamily: theme.fonts.bold,
     maxWidth: 250,
     marginVertical: 32,
@@ -30,10 +30,10 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.bold,
     maxWidth: 200,
     textAlign: 'center',
-    color: theme.colors.primary[900],
+    color: theme.colors.slate[500],
   },
   linkLogin: {
     borderBottomWidth: 2,
-    borderBottomColor: theme.colors.primary[900],
+    borderBottomColor: theme.colors.slate[500],
   },
 });

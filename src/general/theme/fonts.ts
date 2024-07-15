@@ -3,4 +3,6 @@ export const fonts = {
   medium: 'Nunito_500Medium',
   semiBold: 'Nunito_600SemiBold',
   bold: 'Nunito_700Bold',
+  secondRegular: 'Spectral_400Regular',
+  secondBold: 'Spectral_700Bold',
 };

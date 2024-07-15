@@ -14,6 +14,7 @@ import {
 
 import { styles } from './styles';
 import PasswordInput from '@/components/PasswordInput';
+import Title from '@/components/Title';
 
 type SingUpScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -25,6 +26,7 @@ const SignUp = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
+        <Title text='Cadastro' />
         <Text style={styles.title}>
           Pronto para cavar diversão? Cadastre-se e descubra o que os rabos
           estão abanando.

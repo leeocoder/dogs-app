@@ -5,6 +5,10 @@ import {
   Nunito_700Bold,
   useFonts,
 } from '@expo-google-fonts/nunito';
+import {
+  Spectral_400Regular,
+  Spectral_700Bold,
+} from '@expo-google-fonts/spectral';
 
 import { StatusBar } from 'expo-status-bar';
 import { KeyboardAvoidingView, Platform, View } from 'react-native';
@@ -18,6 +22,8 @@ export default function App() {
     Nunito_500Medium,
     Nunito_600SemiBold,
     Nunito_700Bold,
+    Spectral_400Regular,
+    Spectral_700Bold,
   });
 
   if (!fontsLoaded) {

@@ -8,6 +8,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Text, TouchableOpacity, View } from 'react-native';
 
 import { styles } from './styles';
+import Title from '@/components/Title';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -19,6 +20,7 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
+      <Title text='Login' />
       <Text style={styles.title}>
         Seja bem-vindo de volta! Junte-se à matilha e explore histórias caninas
         únicas ao redor do mundo.
