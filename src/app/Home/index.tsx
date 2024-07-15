@@ -1,7 +1,7 @@
 import Button from '@/components/Button';
 import { RootStackParamList } from '@/routes';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { Image, Text, View } from 'react-native';
 
@@ -9,14 +9,14 @@ import Logo from '../assets/icons/logo.svg';
 import DogLogin from '../assets/images/dog-login.png';
 import { styles } from './styles';
 
-type LoginScreenNavigationProp = NativeStackNavigationProp<
+type HomeScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   'Login',
   'SignUp'
 >;
 
 const Home = () => {
-  const navigation = useNavigation<LoginScreenNavigationProp>();
+  const navigation = useNavigation<HomeScreenNavigationProp>();
 
   return (
     <View style={styles.container}>

@@ -2,11 +2,16 @@ import theme from '@/general/theme';
 
 import { Eye, EyeOff } from 'lucide-react-native';
 import React from 'react';
-import { TextInput, TouchableOpacity, View } from 'react-native';
+import {
+  TextInput,
+  TextInputProps,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 import { styles } from './styles';
 
-const PasswordInput = () => {
+const PasswordInput = ({ ...props }: TextInputProps) => {
   const [isPasswordVisible, setIsPasswordVisible] =
     React.useState<boolean>(false);
 
@@ -21,6 +26,7 @@ const PasswordInput = () => {
         secureTextEntry={!isPasswordVisible}
         placeholder='Senha'
         placeholderTextColor={theme.colors.slate[400]}
+        {...props}
       />
       <TouchableOpacity
         style={styles.togglePassword}

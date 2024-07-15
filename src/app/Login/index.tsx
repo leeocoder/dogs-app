@@ -1,12 +1,22 @@
 import Button from '@/components/Button';
 import Input from '@/components/Input';
+import PasswordInput from '@/components/PasswordInput';
+import { RootStackParamList } from '@/routes';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { Text, TouchableOpacity, View } from 'react-native';
 
 import { styles } from './styles';
-import PasswordInput from '@/components/PasswordInput';
+
+type LoginScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'SignUp'
+>;
 
 const Login = () => {
+  const navigation = useNavigation<LoginScreenNavigationProp>();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
@@ -14,18 +24,14 @@ const Login = () => {
         únicas ao redor do mundo.
       </Text>
       <View style={styles.form}>
-        <PasswordInput />
         <Input
           placeholder='Usuário'
           autoCapitalize='none'
         />
-        <Input
-          placeholder='Senha'
-          secureTextEntry={false}
-        />
+        <PasswordInput />
       </View>
       <Button
-        label='Cadastrar'
+        label='Entrar'
         type='full'
         onPress={() => alert('Cadastrado com sucesso!')}
       />
@@ -34,7 +40,10 @@ const Login = () => {
         <Text style={styles.bottomText}>Não faz parte da matilha?</Text>
         <View style={{ flexDirection: 'row' }}>
           <Text style={styles.bottomText}>Junte-se a nós! </Text>
-          <TouchableOpacity style={styles.bottomText}>
+          <TouchableOpacity
+            style={styles.bottomText}
+            onPress={() => navigation.navigate('SignUp')}
+          >
             <Text style={[styles.bottomText, styles.linkLogin]}>
               Cadastre-se agora.
             </Text>

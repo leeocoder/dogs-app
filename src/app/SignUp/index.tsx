@@ -1,16 +1,21 @@
-import {
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-  ViewBase,
-} from 'react-native';
+import Button from '@/components/Button';
+import Input from '@/components/Input';
+import { RootStackParamList } from '@/routes';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { Text, TouchableOpacity, View } from 'react-native';
 
 import { styles } from './styles';
-import Input from '@/components/Input';
-import Button from '@/components/Button';
+import PasswordInput from '@/components/PasswordInput';
+
+type SingUpScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'SignUp'
+>;
 
 const SignUp = () => {
+  const navigation = useNavigation<SingUpScreenNavigationProp>();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
@@ -27,14 +32,8 @@ const SignUp = () => {
           autoCapitalize='none'
           autoComplete='email'
         />
-        <Input
-          placeholder='Senha'
-          secureTextEntry
-        />
-        <Input
-          placeholder='Confirmar a senha'
-          secureTextEntry
-        />
+        <PasswordInput />
+        <PasswordInput placeholder='Confirmar Senha' />
       </View>
       <Button
         label='Cadastrar'
@@ -44,7 +43,10 @@ const SignUp = () => {
       <View style={styles.bottom}>
         <Text style={styles.bottomText}>Já faz parte da matilha?</Text>
         <View style={{ flexDirection: 'row' }}>
-          <TouchableOpacity style={styles.bottomText}>
+          <TouchableOpacity
+            style={styles.bottomText}
+            onPress={() => navigation.navigate('Login')}
+          >
             <Text style={[styles.bottomText, styles.linkLogin]}>Entre</Text>
           </TouchableOpacity>
           <Text style={styles.bottomText}> agora para explorar!</Text>
