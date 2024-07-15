@@ -1,6 +1,6 @@
 export const fonts = {
-  regular: 'Urbanist_400Regular',
-  medium: 'Urbanist_500Medium',
-  semiBold: 'Urbanist_600SemiBold',
-  bold: 'Urbanist_700Bold',
+  regular: 'Nunito_400Regular',
+  medium: 'Nunito_500Medium',
+  semiBold: 'Nunito_600SemiBold',
+  bold: 'Nunito_700Bold',
 };

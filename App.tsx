@@ -1,10 +1,10 @@
 import {
-  Urbanist_400Regular,
-  Urbanist_500Medium,
-  Urbanist_700Bold,
-  Urbanist_600SemiBold,
+  Nunito_400Regular,
+  Nunito_500Medium,
+  Nunito_600SemiBold,
+  Nunito_700Bold,
   useFonts,
-} from '@expo-google-fonts/urbanist';
+} from '@expo-google-fonts/nunito';
 
 import { StatusBar } from 'expo-status-bar';
 import { KeyboardAvoidingView, Platform, View } from 'react-native';
@@ -14,10 +14,10 @@ import Routes from '@/routes';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
-    Urbanist_400Regular,
-    Urbanist_500Medium,
-    Urbanist_600SemiBold,
-    Urbanist_700Bold,
+    Nunito_400Regular,
+    Nunito_500Medium,
+    Nunito_600SemiBold,
+    Nunito_700Bold,
   });
 
   if (!fontsLoaded) {
