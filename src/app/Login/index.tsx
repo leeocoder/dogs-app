@@ -1,14 +1,10 @@
-import {
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-  ViewBase,
-} from 'react-native';
+import Button from '@/components/Button';
+import Input from '@/components/Input';
+
+import { Text, TouchableOpacity, View } from 'react-native';
 
 import { styles } from './styles';
-import Input from '@/components/Input';
-import Button from '@/components/Button';
+import PasswordInput from '@/components/PasswordInput';
 
 const Login = () => {
   return (
@@ -18,13 +14,14 @@ const Login = () => {
         únicas ao redor do mundo.
       </Text>
       <View style={styles.form}>
+        <PasswordInput />
         <Input
           placeholder='Usuário'
           autoCapitalize='none'
         />
         <Input
           placeholder='Senha'
-          secureTextEntry
+          secureTextEntry={false}
         />
       </View>
       <Button
@@ -34,12 +31,14 @@ const Login = () => {
       />
 
       <View style={styles.bottom}>
-        <Text style={styles.bottomText}>Já faz parte da matilha?</Text>
+        <Text style={styles.bottomText}>Não faz parte da matilha?</Text>
         <View style={{ flexDirection: 'row' }}>
+          <Text style={styles.bottomText}>Junte-se a nós! </Text>
           <TouchableOpacity style={styles.bottomText}>
-            <Text style={[styles.bottomText, styles.linkLogin]}>Entre</Text>
+            <Text style={[styles.bottomText, styles.linkLogin]}>
+              Cadastre-se agora.
+            </Text>
           </TouchableOpacity>
-          <Text style={styles.bottomText}> agora para explorar!</Text>
         </View>
       </View>
     </View>
