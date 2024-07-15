@@ -7,7 +7,7 @@ import {
 } from '@expo-google-fonts/urbanist';
 
 import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
+import { KeyboardAvoidingView, Platform, View } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import Routes from '@/routes';
@@ -25,14 +25,19 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <View style={{ flex: 1 }}>
-        <StatusBar
-          translucent={true}
-          style='auto'
-        />
-        <Routes />
-      </View>
-    </NavigationContainer>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={{ flex: 1 }}
+    >
+      <NavigationContainer>
+        <View style={{ flex: 1 }}>
+          <StatusBar
+            translucent={true}
+            style='auto'
+          />
+          <Routes />
+        </View>
+      </NavigationContainer>
+    </KeyboardAvoidingView>
   );
 }
