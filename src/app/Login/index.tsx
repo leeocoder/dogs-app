@@ -1,52 +1,45 @@
-import Button from '@/components/Button';
-import { RootStackParamList } from '@/routes';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { useNavigation } from '@react-navigation/native';
+import {
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+  ViewBase,
+} from 'react-native';
 
-import { Image, Text, View } from 'react-native';
-
-import Logo from '../assets/icons/logo.svg';
-import DogLogin from '../assets/images/dog-login.png';
 import { styles } from './styles';
-
-type LoginScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
-  'Login'
->;
+import Input from '@/components/Input';
+import Button from '@/components/Button';
 
 const Login = () => {
-  const navigation = useNavigation<LoginScreenNavigationProp>();
-
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image
-          style={styles.image}
-          source={DogLogin}
-          resizeMode='cover'
+      <Text style={styles.title}>
+        Seja bem-vindo de volta! Junte-se à matilha e explore histórias caninas
+        únicas ao redor do mundo.
+      </Text>
+      <View style={styles.form}>
+        <Input
+          placeholder='Usuário'
+          autoCapitalize='none'
         />
-        <View style={styles.logoContainer}>
-          <Logo
-            width={57}
-            height={45}
-          />
-        </View>
+        <Input
+          placeholder='Senha'
+          secureTextEntry
+        />
       </View>
-      <View style={styles.loginInputContainer}>
-        <Text style={styles.messageLogin}>
-          Descubra quem está abanando o rabo por aí!
-        </Text>
-        <View style={styles.buttons}>
-          <Button
-            label='Entrar'
-            type='full'
-          />
+      <Button
+        label='Cadastrar'
+        type='full'
+        onPress={() => alert('Cadastrado com sucesso!')}
+      />
 
-          <Button
-            label='Cadastre-se'
-            type='outlined'
-            onPress={() => navigation.navigate('SignUp')}
-          />
+      <View style={styles.bottom}>
+        <Text style={styles.bottomText}>Já faz parte da matilha?</Text>
+        <View style={{ flexDirection: 'row' }}>
+          <TouchableOpacity style={styles.bottomText}>
+            <Text style={[styles.bottomText, styles.linkLogin]}>Entre</Text>
+          </TouchableOpacity>
+          <Text style={styles.bottomText}> agora para explorar!</Text>
         </View>
       </View>
     </View>

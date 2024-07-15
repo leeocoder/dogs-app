@@ -1,4 +1,3 @@
-import Login from '@/app/Login';
 import {
   Urbanist_400Regular,
   Urbanist_500Medium,
@@ -8,7 +7,7 @@ import {
 } from '@expo-google-fonts/urbanist';
 
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import Routes from '@/routes';

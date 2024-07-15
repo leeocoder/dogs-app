@@ -1,11 +1,14 @@
+import Home from '@/app/Home';
 import Login from '@/app/Login';
 import SignUp from '@/app/SignUp';
 import theme from '@/general/theme';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ArrowLeft, Pizza } from 'lucide-react-native';
-import { TouchableOpacity, View } from 'react-native';
+
+import { ArrowLeft } from 'lucide-react-native';
+import { TouchableOpacity } from 'react-native';
 
 export type RootStackParamList = {
+  Home: undefined;
   Login: undefined;
   SignUp: undefined;
 };
@@ -15,13 +18,33 @@ const { Navigator, Screen } = createNativeStackNavigator();
 const Routes = () => {
   return (
     <Navigator
-      screenOptions={{
+      screenOptions={({ navigation }) => ({
         headerShadowVisible: false,
-      }}
+        headerTitle: '',
+        headerBackTitleVisible: false,
+        headerLeft: () => (
+          <TouchableOpacity
+            style={{
+              borderWidth: 1,
+              borderRadius: 12,
+              padding: 10,
+              borderColor: theme.colors.slate[300],
+              marginLeft: 5,
+            }}
+            activeOpacity={0.5}
+            onPress={() => navigation.goBack()}
+          >
+            <ArrowLeft
+              size={19}
+              color={theme.colors.primary[900]}
+            />
+          </TouchableOpacity>
+        ),
+      })}
     >
       <Screen
-        name='Login'
-        component={Login}
+        name='Home'
+        component={Home}
         options={{
           headerShown: false,
         }}
@@ -29,28 +52,10 @@ const Routes = () => {
       <Screen
         name='SignUp'
         component={SignUp}
-        options={({ navigation }) => ({
-          headerTitle: '',
-          headerBackTitleVisible: false,
-          headerLeft: (props) => (
-            <TouchableOpacity
-              style={{
-                borderWidth: 1,
-                borderRadius: 12,
-                padding: 10,
-                borderColor: theme.colors.slate[300],
-                marginLeft: 5,
-              }}
-              activeOpacity={0.5}
-              onPress={() => navigation.goBack()}
-            >
-              <ArrowLeft
-                size={19}
-                color={theme.colors.primary[900]}
-              />
-            </TouchableOpacity>
-          ),
-        })}
+      />
+      <Screen
+        name='Login'
+        component={Login}
       />
     </Navigator>
   );

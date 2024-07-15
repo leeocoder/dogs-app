@@ -5,62 +5,35 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-  },
-  imageContainer: {
-    width: '100%',
-    position: 'relative',
-  },
-  image: {
-    width: '100%',
-  },
-  logoContainer: {
-    position: 'absolute',
-    width: '100%',
-    top: 70,
-    zIndex: 1,
-    alignItems: 'center',
-  },
-  loginInputContainer: {
-    width: '100%',
-    height: '100%',
-    top: -20,
+    paddingHorizontal: 22,
     backgroundColor: '#fff',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    alignItems: 'center',
   },
-  messageLogin: {
-    color: theme.colors.primary[900],
-    fontFamily: theme.fonts.semiBold,
+  title: {
     fontSize: 18,
-    textAlign: 'center',
-    maxWidth: 260,
+    color: theme.colors.primary[900],
+    fontFamily: theme.fonts.bold,
+    maxWidth: 250,
     marginVertical: 32,
   },
-  buttons: {
+  form: {
     rowGap: 16,
-    width: '100%',
-    paddingHorizontal: 22,
+    marginBottom: 32,
   },
-  buttonLogin: {
+  bottom: {
+    flex: 1,
+    justifyContent: 'flex-end',
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: theme.colors.primary[400],
-    borderRadius: 8,
-    paddingVertical: 18,
+    paddingBottom: 32,
   },
-  buttonLabel: {
-    fontFamily: theme.fonts.medium,
+  bottomText: {
     fontSize: 16,
-    color: theme.colors.primary[800],
+    fontFamily: theme.fonts.bold,
+    maxWidth: 200,
+    textAlign: 'center',
+    color: theme.colors.primary[900],
   },
-  buttonRegister: {
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 8,
-    paddingVertical: 18,
-    borderWidth: 2,
-    borderColor: theme.colors.primary[400],
+  linkLogin: {
+    borderBottomWidth: 2,
+    borderBottomColor: theme.colors.primary[900],
   },
 });
