@@ -3,6 +3,7 @@ import Login from '@/app/Login';
 import RequestNewPassword from '@/app/RequestNewPassword';
 import SetNewPassword from '@/app/SetNewPassword';
 import SignUp from '@/app/SignUp';
+import SuccessNewPassword from '@/app/SuccessNewPassword';
 import theme from '@/general/theme';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -13,6 +14,9 @@ export type RootStackParamList = {
   Home: undefined;
   Login: undefined;
   SignUp: undefined;
+  SuccessNewPassword: undefined;
+  RequestNewPassword: undefined;
+  SetNewPassword: undefined;
 };
 
 const { Navigator, Screen } = createNativeStackNavigator();
@@ -52,7 +56,20 @@ const Routes = () => {
         }}
       />
       <Screen
+        name='SuccessNewPassword'
+        component={SuccessNewPassword}
+        options={{ headerShown: false }}
+      />
+      <Screen
         name='SignUp'
+        component={SignUp}
+      />
+      <Screen
+        name='RequestNewPassword'
+        component={RequestNewPassword}
+      />
+      <Screen
+        name='SetNewPassword'
         component={SetNewPassword}
       />
       <Screen
