@@ -10,6 +10,8 @@ export const styles = StyleSheet.create({
     fontSize: 48,
     color: theme.colors.slate[800],
     marginTop: 8,
+    maxWidth: 300,
+    lineHeight: 60,
   },
   separator: {
     width: 30,
@@ -18,7 +20,7 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     position: 'absolute',
     zIndex: -1,
-    top: 38,
+    top: 28,
     left: -8,
   },
 });
