@@ -1,6 +1,7 @@
 import Home from '@/app/Home';
 import Login from '@/app/Login';
 import RequestNewPassword from '@/app/RequestNewPassword';
+import SetNewPassword from '@/app/SetNewPassword';
 import SignUp from '@/app/SignUp';
 import theme from '@/general/theme';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -52,7 +53,7 @@ const Routes = () => {
       />
       <Screen
         name='SignUp'
-        component={RequestNewPassword}
+        component={SetNewPassword}
       />
       <Screen
         name='Login'
